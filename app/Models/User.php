@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,7 +14,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * 
+ *
  *
  * @property int $id
  * @property string $name
@@ -110,4 +112,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // public function canAccessPanel(Panel $panel): bool
+    // {
+    //     if (auth()->user()->id === 1) {
+    //         return true;
+    //     }
+    // }
 }
